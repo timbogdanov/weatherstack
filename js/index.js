@@ -17,10 +17,11 @@ searchInput.addEventListener('keypress', function (e) {
     let inputValue = searchInput.value;
 
     fetch(
-      `http://api.weatherstack.com/current?access_key=${API_KEY}&query=${inputValue}&units=f`
+      `https://api.weatherstack.com/current?access_key=${API_KEY}&query=${inputValue}&units=f`
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         // Setting text/image content with returned data
         country.textContent = data.location.country;
         region.textContent = data.location.region;
