@@ -2,6 +2,7 @@ const API_KEY = '4c4a01229bdd721de8641c3243a55c33';
 
 const searchInput = document.querySelector('.search-input');
 
+// Storing HTML classes in constants
 const country = document.querySelector('.country-name');
 const region = document.querySelector('.region-name');
 const city = document.querySelector('.city-name');
@@ -20,7 +21,7 @@ searchInput.addEventListener('keypress', function (e) {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // Setting text/image content with returned data
         country.textContent = data.location.country;
         region.textContent = data.location.region;
         city.textContent = data.location.name;
